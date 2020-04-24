@@ -13,7 +13,12 @@
 {# Django Auth Home Link / Register Link#}
           <li><a class="navbar-brand" href="{% url 'index' %}">Django Auth</a></li>
           <li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
-
+          <li><a class="navbar-link" href="{% url 'register' %}">Register</a></li>
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+            <li><a class="navbar-link" href="{% url 'login' %}">Login</a></li>
+          {% endif %}
 </ul>
       </div>
     </nav>
