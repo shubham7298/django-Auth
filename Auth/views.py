@@ -15,7 +15,7 @@ salt = '5eC437/\9&*'
 def index(request):
     return render(request, 'index.html')
 
-
+@csrf_exempt
 def register(request):
     registered = False
     status_code = 200
